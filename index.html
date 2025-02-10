@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>password generator</title>
+
+</head>
+
+<body>
+    <form action="#">
+        <h3>Password Generator</h3>
+        <p>Take your protection a noch higher</p>
+        <label>
+            <p id="fullnm">Please Enter Your Name:</p>
+            <input type="textbox" name="fullname" id="fullname" aria-colspan="50" aria-rowspan="50" required>
+        </label>
+        <label class="slider" for="slider">
+            <p>password strength:<span id="sliderValue">10</span></p>
+            <input type="range" id="slider" name="slider" min="0" max="50" value="10">
+        </label>
+        <label>
+            <input type="checkbox" name="password" value="numbers">Numbers
+        </label>
+        <label>
+            <input type="checkbox" name="password" value="symbols">Symbols
+        </label><br>
+        <label>
+            <input type="checkbox" name="password" value="uppercase">Uppercase
+        </label>
+        <label>
+            <input type="checkbox" name="password" value="Lowercase">Lowercase
+        </label><br>
+        <label id="pass">
+
+        </label>
+        <br>
+        <button onclick="Generate()">Generate</button>
+        <button onclick="copy()">Copy Password</button>
+    </form>
+    <script>
+        // Get references to the slider and the display element
+        const slider = document.getElementById('slider');
+        const sliderValue = document.getElementById('sliderValue');
+
+        // Add an event listener to the slider to update the display value
+        slider.addEventListener('input', function () {
+            sliderValue.textContent = this.value;
+        });
+    </script>
+</body>
+
+</html>
